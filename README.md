@@ -4,7 +4,7 @@
 
 ### 由于github上的图片显示有问题，所以操作指南放在gitee上
 ```angular2html
-	项目地址：https://gitee.com/liuliuliuyuyuy/ahnulibrary-operation-guide
+https://gitee.com/liuliuliuyuyuy/ahnulibrary-operation-guide
 ```
 
 ### 特别说明
