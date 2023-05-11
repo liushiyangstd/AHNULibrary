@@ -3,9 +3,16 @@ import json
 import smtplib
 import datetime
 import logging
+import random
+import time
 from wxpusher import WxPusher
 TOMORROW = str(datetime.date.today() + datetime.timedelta(days=1))
 TODAY = str(datetime.date.today())
+
+# 获取随机数
+# 预约时间延时5~10分钟
+second = random.randint(300,600)
+time.sleep(second)
 
 # 请求头
 header = {
@@ -14,6 +21,7 @@ header = {
     'Origin': 'http://libzwxt.ahnu.edu.cn',
     'Referer': 'http://libzwxt.ahnu.edu.cn/SeatWx/Seat.aspx?fid=3&sid=1438',
     # 'User-Agent': "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36",
+    # 设置为安卓手机的请求头
     'User-Agent': "Mozilla/5.0 (Linux; Android 12; M2006J10C Build/SP1A.210812.016; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/107.0.5304.141 Mobile Safari/537.36 XWEB/5061 MMWEBSDK/20230303 MMWEBID/534 MicroMessenger/8.0.34.2340(0x2800225D) WeChat/arm64 Weixin NetType/4G Language/zh_CN ABI/arm64;",
     'X-AjaxPro-Method': 'AddOrder',
     "Connection": "close",
