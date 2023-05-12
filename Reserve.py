@@ -103,7 +103,9 @@ class Reserve:
                 'st': self.info['st'],
                 'et': self.info['et'],
             }
-
+            # 预约时间延时10到15秒
+            second = random.randint(10, 15)
+            time.sleep(second)
             # 尝试进行预约
             reserve = self.session.post(reserveUrl, data=json.dumps(reserverData), headers=header)
             if '成功' in reserve.text:
@@ -115,6 +117,9 @@ class Reserve:
 
             while '预约成功' not in reserve.text:
                 # 预约未成功，再次尝试
+                # 预约时间延时10到15秒
+                second = random.randint(10, 15)
+                time.sleep(second)
                 reserve = self.session.post(reserveUrl, data=json.dumps(reserverData), headers=header)
 
 
